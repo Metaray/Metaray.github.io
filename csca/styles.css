@@ -1,0 +1,32 @@
+html {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.main-container {
+    max-width: 1000px;
+    margin: 1em auto;
+    background: #f0f0f0;
+    padding: 5px;
+    border: 1px solid #000000;
+    text-align: center;
+}
+
+.controls-table {
+    margin: auto;
+}
+
+.controls-table input[type=range] {
+    width: 300px;
+}
+
+.controls-table input[type=text] {
+    width: 50px;
+}
+
+canvas {
+    max-width: 100%;
+    margin: auto;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}

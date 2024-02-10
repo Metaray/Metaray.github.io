@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Continuous state cellular automata</title>
+</head>
+<body>
+    <div class="main-container">
+        <canvas id="cadisplay" style="width: 600px" width="256" height="256"></canvas>
+
+        <table class="controls-table">
+            <caption>X'(n) = A*X(N-1) + B*X(N) + C*X(N+1) + D</caption>
+            <tbody></tbody>
+        </table>
+
+        <button type="button" id="redrawButton">Redraw</button>
+    </div>
+    <script src="csca.js"></script>
+</body>
+</html>
