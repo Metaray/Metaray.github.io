@@ -46,19 +46,28 @@ const Parameters = {
     d: new Parameter(0.492),
 };
 
+const size = canvas.width;
+const steps = canvas.height;
+const initialState = Array(size).fill(0.0).map(() => Math.random());
+
+function reseed() {
+    for (let i = 0; i < initialState.length; ++i) {
+        initialState[i] = Math.random();
+    }
+
+    redraw();
+}
+
 function redraw() {
     const a = Parameters.a.value;
     const b = Parameters.b.value;
     const c = Parameters.c.value;
     const d = Parameters.d.value;
-    // console.log(params);
 
-    const size = canvas.width;
-    const steps = canvas.height;
     const data = ctx.createImageData(size, steps);
 
-    let state = Array(size).fill(0.0).map(() => Math.random());
-    let nextState = Array(size).fill(0.0);
+    let state = Array.from(initialState);
+    let nextState = Array(size);
 
     for (let y = 0; y < steps; ++y) {
         for (let x = 0; x < size; ++x) {
@@ -138,5 +147,11 @@ function redraw() {
 
     redraw();
 
-    document.getElementById('redrawButton').addEventListener('click', () => redraw());
+    reseedButton.addEventListener('click', () => reseed());
+
+    randomizeButton.addEventListener('click', () => {
+        for (const param of Object.values(Parameters)) {
+            param.value = Math.random();
+        }
+    });
 })();
