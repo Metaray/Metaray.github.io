@@ -14,14 +14,23 @@ html {
 
 .controls-table {
     margin: auto;
+    max-width: 100%;
+}
+
+.controls-table tr {
+    display: flex;
+    gap: 1em;
 }
 
 .controls-table input[type=range] {
-    width: 300px;
+    flex: 300px 1 1;
+    width: 0px;
+    min-width: 0;
 }
 
-.controls-table input[type=text] {
-    width: 50px;
+.controls-table input[type=number] {
+    flex: 60px 0 0;
+    min-width: 0;
 }
 
 canvas {
